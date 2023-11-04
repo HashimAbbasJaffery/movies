@@ -1,11 +1,14 @@
 import LikedMovie from "./LikedMovie";
 
 export default function LikedMovies({ visibility }) {
+    const LikedMovies = JSON.parse(localStorage.getItem("likedMovies"));
+    console.log({LikedMovies})
+    const movies = LikedMovies?.map(movie => {
+        return <LikedMovie name={movie.name} />
+    }) 
     return (
         <div className={visibility + " liked-movies"}>
-            <LikedMovie name="Ant-man and wasp: quantumania" />
-            <LikedMovie name="Spiderman" />
-            <LikedMovie name="Superman" />
+            {movies}
         </div>
     )
 }

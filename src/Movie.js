@@ -1,15 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react"
 export default function Movie({ movie }) {
 
     const [like, setLike] = useState(false);
+    const firstExecution = useRef(true);
+
     function handleLike(e) {
         e.preventDefault();
         setLike(!like);
     }
+    function isLiked() {
+        const likedMovies = JSON.parse(localStorage.getItem("likedMovies"));
+        const isLiked = likedMovies.find(likedMovie => likedMovie.name === movie.name);
+        if(isLiked) {
+            setLike(true);
+        }
+    }
     useEffect(() => {
+        if(firstExecution.current) {
+            isLiked();
+            firstExecution.current = false;
+            return;
+        }
         if(like) {
+            console.log("kaka")
             addToLikedMovies();
+        } else {
+            removeFromLiked();
         }
     }, [ like ])
     function addToLikedMovies() {
@@ -20,6 +37,16 @@ export default function Movie({ movie }) {
             likedMovies = JSON.parse(likedMovies);
             likedMovies.push(movie);
             localStorage.setItem("likedMovies", JSON.stringify(likedMovies))    
+        }
+        updateQuantity();
+    }
+    function removeFromLiked() {
+        let likedMovies = JSON.parse(localStorage.getItem("likedMovies"));
+        const filteredDisliked = likedMovies?.filter(likedMovie => {
+            return likedMovie.name !== movie.name;
+        })
+        if(filteredDisliked) {
+            localStorage.setItem("likedMovies", JSON.stringify(filteredDisliked));
         }
         updateQuantity();
     }
