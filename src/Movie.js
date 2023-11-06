@@ -3,32 +3,41 @@ import { useState } from "react"
 export default function Movie({ movie }) {
 
     const [like, setLike] = useState(false);
-    const firstExecution = useRef(true);
+    const [firstRender, setFirstRender] = useState(true);
 
     function handleLike(e) {
         e.preventDefault();
         setLike(!like);
-    }
-    function isLiked() {
-        const likedMovies = JSON.parse(localStorage.getItem("likedMovies"));
-        const isLiked = likedMovies.find(likedMovie => likedMovie.name === movie.name);
-        if(isLiked) {
-            setLike(true);
-        }
-    }
-    useEffect(() => {
-        if(firstExecution.current) {
-            isLiked();
-            firstExecution.current = false;
-            return;
-        }
-        if(like) {
-            console.log("kaka")
+        if(!like) {
             addToLikedMovies();
         } else {
             removeFromLiked();
         }
-    }, [ like ])
+    }
+    
+    useEffect(() => {
+        function isLiked() {
+            const likedMovies = JSON.parse(localStorage.getItem("likedMovies"));
+            const isLiked = likedMovies?.find(likedMovie => likedMovie.name === movie.name);
+            if(isLiked) {
+                setLike(true);
+            }
+        }
+        isLiked();
+    })
+    // useEffect(() => {
+    //     if(firstRender) {
+    //         console.log("lol")
+    //         isLiked();
+    //         setFirstRender(false);
+    //         return;
+    //     }
+    //     if(like) {
+    //         addToLikedMovies();
+    //     } else {
+    //         removeFromLiked();
+    //     }
+    // }, [ like, addToLikedMovies, removeFromLiked, isLiked ])
     function addToLikedMovies() {
         let likedMovies = localStorage.getItem("likedMovies");
         if(!likedMovies) {
@@ -59,7 +68,7 @@ export default function Movie({ movie }) {
     return (
         <div className="single-movie" key={movie.key}>
             <div className="movie-thumbnail">
-                <img src="https://placehold.co/230x150" width="100%"/>
+                <img src="https://placehold.co/230x150" alt="img" width="100%"/>
             </div>
             <div className="movie-details">
                 <div className="movie-title">
@@ -72,10 +81,10 @@ export default function Movie({ movie }) {
                 </div>
                 <div className="buttons">
                     <div className="read-more" style={{ marginBottom: "20px" }}>
-                        <a href="#" style={{padding: "10px"}}>Read more</a>
+                        <a href="/" style={{padding: "10px"}}>Read more</a>
                     </div>
                     <div className="like" style={{ marginBottom: "20px" }}>
-                        <a href="#" onClick={handleLike} style={{padding: "10px"}}>{ ( like )? "Dislike" : "Like" }</a>
+                        <a href="/" onClick={handleLike} style={{padding: "10px"}}>{ ( like )? "Dislike" : "Like" }</a>
                     </div>
                 </div>
             </div>
