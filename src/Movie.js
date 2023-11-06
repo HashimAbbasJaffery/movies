@@ -3,7 +3,6 @@ import { useState } from "react"
 export default function Movie({ movie }) {
 
     const [like, setLike] = useState(false);
-    const [firstRender, setFirstRender] = useState(true);
 
     function handleLike(e) {
         e.preventDefault();
@@ -25,19 +24,6 @@ export default function Movie({ movie }) {
         }
         isLiked();
     })
-    // useEffect(() => {
-    //     if(firstRender) {
-    //         console.log("lol")
-    //         isLiked();
-    //         setFirstRender(false);
-    //         return;
-    //     }
-    //     if(like) {
-    //         addToLikedMovies();
-    //     } else {
-    //         removeFromLiked();
-    //     }
-    // }, [ like, addToLikedMovies, removeFromLiked, isLiked ])
     function addToLikedMovies() {
         let likedMovies = localStorage.getItem("likedMovies");
         if(!likedMovies) {
