@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom";
 import React, { useState } from "react";
-import Header from "./Header";
+import Header from "./components/Header";
 import "./App.css";
-import LikedMovies from "./LikedMovies";
-import MoviesSection from "./MoviesSection";
+import LikedMovies from "./components/LikedMovies";
+import MoviesSection from "./components/MoviesSection";
 
 
 
@@ -32,6 +32,7 @@ function App() {
     const keyword = e.target.value;
     setKeyword(keyword);
     setFocus(true);
+    
   } 
 
   function handleGenreSearch(e) {

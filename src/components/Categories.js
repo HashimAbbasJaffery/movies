@@ -1,4 +1,4 @@
-import categories from "./utils/categories"
+import categories from "../utils/categories"
 
 export default function Categories({ onClick, genre }) {
     const categoriesList = categories.map(category => {

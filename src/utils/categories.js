@@ -1,8 +1,8 @@
 const categories = [
     "horror",
     "action",
-    "sci-fi",
-    "Romantics"
+    "series",
+    "anime"
 ];
 
 export default categories;

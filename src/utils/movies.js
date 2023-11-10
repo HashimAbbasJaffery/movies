@@ -1,66 +1,90 @@
 let movies = [
     {
         id: 1,
-        name: "The Extraction 2",
+        name: "Train to Busan",
         image: null,
         genre: "sci-fi",
-        description: "It is about a mercenary, Tyler Rake (Hemsworth) who is initally hired to rescue the wife of an abusive crime lord and her children from a Georgian prison, but who finds that he must also protect the family from the crime syndicate after the extraction."
+        description: "It is dedicated to one child and zombie"
     },
+    // Oo2eSHgfWsPbpTnx
+    // mongodb+srv://hashim_abbas:Oo2eSHgfWsPbpTnx@movies.wpsnmb0.mongodb.net/
+
     {
         id: 2,
-        name: "Avengers: Endgame",
+        name: "Stranger Things",
         image: null,
-        genre: "Romantics",
-        description: "AVENGERS: ENDGAME is set after Thanos' catastrophic use of the Infinity Stones randomly wiped out half of Earth's population in Avengers: Infinity War. Those left behind are desperate to do something -- anything -- to bring back their lost loved ones."
+        genre: "series",
+        description: "Vecna is trying to come from the upside down to the real world"
     },
     {
         id: 3,
-        name: "Spiderman no way home",
+        name: "All of us are dead",
         image: null,
-        genre: "action",
-        description: "AVENGERS: ENDGAME is set after Thanos' catastrophic use of the Infinity Stones randomly wiped out half of Earth's population in Avengers: Infinity War. Those left behind are desperate to do something -- anything -- to bring back their lost loved ones."
+        genre: "series",
+        description: "Teenagers are trying to be saved from the zombies"
     },
     {
         id: 4,
-        name: "spiderman far from home",
+        name: "Wednesday",
+        image: null,
+        genre: "series",
+        description: "A psycho girl"
+    },
+    {
+        id: 5,
+        name: "Sweet home",
+        image: null,
+        genre: "series",
+        description: "Octopus is eating the boy"
+    },
+    {
+        id: 6,
+        name: "Business Proposal",
+        image: null,
+        genre: "series",
+        description: "one boy died"
+    },
+    {
+        id: 7,
+        name: "Spy X Family",
+        image: null,
+        genre: "anime",
+        description: "any is happy baby"
+    },
+    {
+        id: 8,
+        name: "Ouija board",
         image: null,
         genre: "horror",
-        description: "AVENGERS: ENDGAME is set after Thanos' catastrophic use of the Infinity Stones randomly wiped out half of Earth's population in Avengers: Infinity War. Those left behind are desperate to do something -- anything -- to bring back their lost loved ones."
+        description: "The comedy board"
     },
     {
-        id: 1,
-        name: "The Extraction 2",
-        image: null,
-        genre: "sci-fi",
-        description: "It is about a mercenary, Tyler Rake (Hemsworth) who is initally hired to rescue the wife of an abusive crime lord and her children from a Georgian prison, but who finds that he must also protect the family from the crime syndicate after the extraction."
-    },
-    {
-        id: 2,
-        name: "Avengers: Endgame",
-        image: null,
-        genre: "Romantics",
-        description: "AVENGERS: ENDGAME is set after Thanos' catastrophic use of the Infinity Stones randomly wiped out half of Earth's population in Avengers: Infinity War. Those left behind are desperate to do something -- anything -- to bring back their lost loved ones."
-    },
-    {
-        id: 3,
-        name: "Spiderman no way home",
-        image: null,
-        genre: "action",
-        description: "AVENGERS: ENDGAME is set after Thanos' catastrophic use of the Infinity Stones randomly wiped out half of Earth's population in Avengers: Infinity War. Those left behind are desperate to do something -- anything -- to bring back their lost loved ones."
-    },
-    {
-        id: 4,
-        name: "spiderman far from home",
-        image: null,
-        genre: "horror",
-        description: "AVENGERS: ENDGAME is set after Thanos' catastrophic use of the Infinity Stones randomly wiped out half of Earth's population in Avengers: Infinity War. Those left behind are desperate to do something -- anything -- to bring back their lost loved ones."
-    },
-    {
-        id: 4,
+        id: 9,
         name: "Exorcist: Believer",
         image: null,
         genre: "horror",
-        description: "When his daughter, Angela, and her friend Katherine, show signs of demonic possession, it unleashes a chain of events that forces single father Victor Fielding to confront the nadir of evil. Terrified and desperate, he seeks out Chris MacNeil, the only person alive who's witnessed anything like it before."
+        description: "Jins always do dance in this film. gadhay!!"
+    },
+    {
+        id: 10,
+        name: "Mommy",
+        image: null,
+        genre: "horror",
+        description: "Cheeni Daddy!!!"
+    },
+    {
+        id: 11,
+        name: "1920",
+        image: null,
+        genre: "horror",
+        description: "1"
+    },
+    {
+        id: 12,
+        name: "The Marvels",
+        image: null,
+        genre: "action",
+        description: "Three fool girls"
     },
 ];
 

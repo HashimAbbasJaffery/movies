@@ -7,6 +7,9 @@ ul.react-paginate {
   padding: 0 5rem;
 }
 
+ul.react-paginate li {
+  margin: 10px;
+}
 ul.react-paginate li a {
   border-radius: 7px;
   padding: 0.1rem 1rem;

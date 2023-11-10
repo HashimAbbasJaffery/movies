@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react"
-export default function Movie({ movie }) {
+export default function 
+Movie({ movie }) {
 
     const [like, setLike] = useState(false);
 
@@ -17,11 +18,12 @@ export default function Movie({ movie }) {
     useEffect(() => {
         function isLiked() {
             const likedMovies = JSON.parse(localStorage.getItem("likedMovies"));
-            const isLiked = likedMovies?.find(likedMovie => likedMovie.name === movie.name);
+            const isLiked = likedMovies?.find(likedMovie => likedMovie.id === movie.id);
             if(isLiked) {
                 setLike(true);
             }
         }
+        console.log(movie.name + "Status: " + like);
         isLiked();
     })
     function addToLikedMovies() {
@@ -70,7 +72,7 @@ export default function Movie({ movie }) {
                         <a href="/" style={{padding: "10px"}}>Read more</a>
                     </div>
                     <div className="like" style={{ marginBottom: "20px" }}>
-                        <a href="/" onClick={handleLike} style={{padding: "10px"}}>{ ( like )? "Dislike" : "Like" }</a>
+                        <a href="/" onClick={handleLike} style={{padding: "10px"}}>{ ( like ) ? "Dislike" : "Like" }</a>
                     </div>
                 </div>
             </div>

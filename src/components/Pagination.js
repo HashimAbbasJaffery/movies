@@ -25,7 +25,7 @@ function PaginatedItems({ itemsPerPage, movies }) {
       setItemOffset(newOffset);
     };
     const movieOfCurrentPage = currentItems.map(item => {
-      return <Movie movie={item} />
+      return <Movie key={item.id} movie={item} />
     })
     return (
       <>
