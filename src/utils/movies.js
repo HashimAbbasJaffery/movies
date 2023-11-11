@@ -1,3 +1,4 @@
+import axios from "axios";
 let movies = [
     {
         id: 1,
@@ -87,5 +88,6 @@ let movies = [
         description: "Three fool girls"
     },
 ];
+
 
 export default movies;

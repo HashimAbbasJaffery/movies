@@ -27,7 +27,6 @@ function App() {
   function handleVisibility() {
     setVisibility( ! visibility );
   }
-
   function handleSearch(e) {
     const keyword = e.target.value;
     setKeyword(keyword);

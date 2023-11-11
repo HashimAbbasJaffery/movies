@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     try {
         const name = "kaka";
         const description = "lol";
-        const genre = "Horror";
+        const genre = "anime";
         const image = null;
       if (!name || !description) {
         return res.status(400).json({ message: 'Name and description are required' });
@@ -34,8 +34,24 @@ router.get('/', async (req, res) => {
   });
   router.get('/movies', async (req, res) => {
     try {
-        const movies = await Movie.find();
-        res.json(movies);
+      
+      const whereName = req.query.name;
+      const whereGenre = req.query.genre;
+
+      const query = {};
+
+      if(whereName) {
+        query["name"] = { $regex: whereName }
+      }
+
+      if(whereGenre) {
+        query["genre"] = {$regex: new RegExp(`^${whereGenre}$`, 'i')}
+      }
+
+      console.log(whereGenre);
+
+      const movies = await Movie.find(query);
+      res.json(movies);
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Server Error' });

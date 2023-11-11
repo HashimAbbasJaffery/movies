@@ -4,6 +4,7 @@ export default function
 Movie({ movie }) {
 
     const [like, setLike] = useState(false);
+    const isExecuted = useRef(false);
 
     function handleLike(e) {
         e.preventDefault();
@@ -16,6 +17,8 @@ Movie({ movie }) {
     }
     
     useEffect(() => {
+        if(isExecuted.current) return; 
+        console.log(movie);
         function isLiked() {
             const likedMovies = JSON.parse(localStorage.getItem("likedMovies"));
             const isLiked = likedMovies?.find(likedMovie => likedMovie.id === movie.id);
@@ -25,6 +28,7 @@ Movie({ movie }) {
         }
         console.log(movie.name + "Status: " + like);
         isLiked();
+        isExecuted.current = true;
     })
     function addToLikedMovies() {
         let likedMovies = localStorage.getItem("likedMovies");
@@ -54,7 +58,7 @@ Movie({ movie }) {
         liked.textContent = likedMovies;
     }
     return (
-        <div className="single-movie" key={movie.key}>
+        <div className="single-movie" key={movie.id}>
             <div className="movie-thumbnail">
                 <img src="https://placehold.co/230x150" alt="img" width="100%"/>
             </div>
