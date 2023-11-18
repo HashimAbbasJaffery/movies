@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import Movie from "./Movie";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function PaginatedItems({ itemsPerPage, movies }) {
     // Here we use item offsets; we could also use page offsets
@@ -29,7 +30,10 @@ function PaginatedItems({ itemsPerPage, movies }) {
     })
     return (
       <>
-      {movieOfCurrentPage}
+      <div className="row" style={{ width: "100%" }}>
+        {movieOfCurrentPage}
+      </div>
+      <div>
         <ReactPaginate
           breakLabel="..."
           nextLabel="next >"
@@ -40,6 +44,7 @@ function PaginatedItems({ itemsPerPage, movies }) {
           renderOnZeroPageCount={null}
           className="react-paginate"
         />
+      </div>
       </>
     );
   }

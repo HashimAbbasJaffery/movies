@@ -1,4 +1,3 @@
-import axios from "axios";
 let movies = [
     {
         id: 1,
@@ -13,7 +12,7 @@ let movies = [
     {
         id: 2,
         name: "Stranger Things",
-        image: null,
+        image: "stranger_things.jpg",
         genre: "series",
         description: "Vecna is trying to come from the upside down to the real world"
     },
@@ -82,6 +81,14 @@ let movies = [
     },
     {
         id: 12,
+        name: "The Marvels",
+        image: null,
+        genre: "action",
+        description: "Three fool girls"
+    },
+    
+    {
+        id: 13,
         name: "The Marvels",
         image: null,
         genre: "action",
